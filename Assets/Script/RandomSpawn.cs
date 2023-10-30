@@ -21,8 +21,8 @@ public class RandomSpawn : MonoBehaviour
             nextSpawn = Time.time + spawnRate;
             RandX = Random.Range(-9.23f,9.24f);
             whereToSpawn = new Vector2(RandX, transform.position.y);
-            GameObject Enemy = Instantiate(obj, whereToSpawn, Quaternion.identity);
-            Destroy(Enemy, 1.7f);
+            GameObject enemy = Instantiate(obj, whereToSpawn, Quaternion.identity);
+            Destroy(enemy, 1.7f);
         }
         
     }
