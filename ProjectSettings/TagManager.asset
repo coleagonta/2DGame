@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - FallingObject
+  - CUBE
+  - GameOver
+  - Health1
+  - Health2
+  - Health3
   layers:
   - Default
   - TransparentFX

@@ -1,11 +1,16 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
     private int coinCount = 0;
-    public TextMeshProUGUI coinCountText; // Поле для текста
+    public int missedCount = 0;
+    public int takeCoin = 0;
+    public int maxCoin = 5;
+    public TextMeshProUGUI coinCountText;
+    
 
     void Update()
     {
@@ -22,11 +27,18 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("FallingObject"))
         {
             coinCount++; 
+            Debug.Log(("Take Coin : " + coinCount));
             UpdateCoinCountText(); 
             Destroy(other.gameObject);
+            if (coinCount >= maxCoin)
+            {
+                Debug.Log("You Win");
+                SceneManager.LoadScene("YouWin");
+                
+            }
         }
     }
-
+    
     void UpdateCoinCountText()
     {
         if (coinCountText != null)
